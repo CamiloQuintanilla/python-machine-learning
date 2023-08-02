@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: machine-learning-aplication
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: machine-learning-aplication
+  template:
+    metadata:
+      labels:
+        app: machine-learning-aplication
+    spec:
+      containers:
+      - name: machine-learning-aplication
+        image: machine_learning_api
+        ports:
+        - containerPort: 5000
